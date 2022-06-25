@@ -25,8 +25,8 @@ namespace API.Extensions
             // This section is for running locally
             services.AddDbContext<DataContext>(opt => 
             {
-                opt.UseSqlite(config.GetConnectionString("DefaultConnection"));
-                //opt.UseNpgsql(config.GetConnectionString("DefaultConnection"));
+                //opt.UseSqlite(config.GetConnectionString("DefaultConnection"));
+                opt.UseNpgsql(config.GetConnectionString("DefaultConnection"));
             });
 
             /* // This section is for deploying to Heroku
