@@ -21,6 +21,15 @@ namespace API.Extensions
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebAPIv5", Version = "v1" });
             });
+
+            // This section is for running locally
+            services.AddDbContext<DataContext>(opt => 
+            {
+                opt.UseSqlite(config.GetConnectionString("DefaultConnection"));
+                //opt.UseNpgsql(config.GetConnectionString("DefaultConnection"));
+            });
+
+            /* // This section is for deploying to Heroku
             services.AddDbContext<DataContext>(options =>
             {
                 var env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
@@ -57,6 +66,8 @@ namespace API.Extensions
                 // or from the environment variable from Heroku, use it to set up your DbContext.
                 options.UseNpgsql(connStr);
             });
+            */
+
             services.AddCors(opt => 
             {
                 opt.AddPolicy("CorsPolicy", policy =>
