@@ -5,6 +5,10 @@
 
 // Added by Ebbe:
 .vscode
+reactivities.db
+reactivities.db-shm
+reactivities.db-wal
+
 
 appsettings.json
 
