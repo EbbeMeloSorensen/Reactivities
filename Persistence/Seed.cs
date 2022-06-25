@@ -50,7 +50,7 @@ namespace Persistence
                         Description = "Activity 2 months ago",
                         Category = "drinks",
                         City = "London",
-                        Venue = "Pub",
+                        Venue = "Pub"/*,
                         Attendees = new List<ActivityAttendee>
                         {
                             new ActivityAttendee
@@ -59,7 +59,8 @@ namespace Persistence
                                 IsHost = true
                             }
                         }
-                    },
+                        */
+                    }/*,
                     new Activity
                     {
                         Title = "Past Activity 2",
@@ -253,6 +254,7 @@ namespace Persistence
                             },
                         }
                     }
+                    */
                 };
 
                 await context.Activities.AddRangeAsync(activities);
