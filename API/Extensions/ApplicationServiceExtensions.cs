@@ -23,6 +23,7 @@ namespace API.Extensions
             });
 
             // This section is for running locally
+            /*
             services.AddDbContext<DataContext>(opt => 
             {
                 //opt.UseSqlite(config.GetConnectionString("DefaultConnection"));
@@ -30,8 +31,9 @@ namespace API.Extensions
                 //opt.UseSqlServer(config.GetConnectionString("DefaultConnection"));
 
             });
+            */
 
-            /* // This section is for deploying to Heroku
+            // This section is for deploying to Heroku
             services.AddDbContext<DataContext>(options =>
             {
                 var env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
@@ -68,7 +70,6 @@ namespace API.Extensions
                 // or from the environment variable from Heroku, use it to set up your DbContext.
                 options.UseNpgsql(connStr);
             });
-            */
 
             services.AddCors(opt => 
             {
