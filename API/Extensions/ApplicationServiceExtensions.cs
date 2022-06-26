@@ -27,6 +27,8 @@ namespace API.Extensions
             {
                 //opt.UseSqlite(config.GetConnectionString("DefaultConnection"));
                 opt.UseNpgsql(config.GetConnectionString("DefaultConnection"));
+                //opt.UseSqlServer(config.GetConnectionString("DefaultConnection"));
+
             });
 
             /* // This section is for deploying to Heroku
