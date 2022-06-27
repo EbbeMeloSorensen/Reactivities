@@ -39,4 +39,7 @@ Todo:
 5) I heroku tilføj ressourcen Heroku postgres til applikationen
 6) I heroku sæt de nødvendige config variable
 7) Sæt en build pack ved at eksekvere følgende ved command prompten i VS Code: `heroku buildpacks:set https://github.com/jincod/dotnetcore-buildpack` Bagefter figurerer det også åp Heroku web pagen
-8) Generer et optimized production build ved at eksekvere følgende ved command prompten i VS Code: `npm run build`
+8) i VS Code command prompten, naviger hen til client-app folderen, og generer et optimized production build ved at eksekvere følgende: `npm run build`. Som post build event flytter den bygget hen i API folderen.
+9) commit det hele til git, vel at mærke inklusiv det, der ligger i wwwroot-folderen
+10) Eksekver: `git push heroku main` eller `git push heroku HEAD:master`
+11) Åbn applikationen i https://meloreactivities.herokuapp.com
