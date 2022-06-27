@@ -6,6 +6,11 @@ import { useStore } from "../../../app/stores/store";
 
 export default observer(function ActivityFilters() {
     const {activityStore: {predicate, setPredicate}} = useStore();
+
+    function onChange(date: Date) {
+        setPredicate('startDate', date)
+    }
+
     return (
         <>
             <Menu vertical size='large' style={{width: '100%', marginTop: 27}}>
@@ -28,9 +33,10 @@ export default observer(function ActivityFilters() {
             </Menu>
             <Header />
             <Calendar
-                // virker ikke
+                // Lavet en smule anderledes end i kurset, da jeg ellers ikke kunne få det til at virke
                 //onChange={(date) => setPredicate('startDate', date as Date)}
-                //value={predicate.get('startDate') || new Date()}
+                onChange={onChange}
+                value={predicate.get('startDate') || new Date()}
             />
         </>
     )
